@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>برچسب و کاردکد داروی ترکیه و سامانهٔ ITS — دارووی</title>
+  <meta name="description" content="آموزش خواندن کاردکد (Data Matrix) جعبهٔ داروی ترکیه، شناسه‌های GTIN و سریال، و استعلام در سامانهٔ رسمی İlaç Takip Sistemi.">
+  <meta name="author" content="تیم محتوای دارووی (DarooWay Content Team)">
+  <link rel="canonical" href="https://darooway.github.io/labels-its.html">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">پرش به محتوا</a>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="index.html">دارووی <span>| راهنمای آموزشی دارو و مکمل</span></a>
+    <nav class="primary" aria-label="فهرست اصلی">
+      <ul>
+        <li><a href="index.html">صفحهٔ اصلی</a></li>
+        <li><a href="labels-its.html" aria-current="page">برچسب و سامانهٔ ITS</a></li>
+        <li><a href="storage-expiry.html">نگهداری و تاریخ انقضا</a></li>
+        <li><a href="drugs.html">نگاه آموزشی به چند دارو</a></li>
+      </ul>
+    </nav>
+    </div>
+  </header>
+  <main id="content" class="wrap">
+    <h1>خواندن برچسب و کاردکد جعبهٔ داروی ترکیه</h1>
+    <p class="meta">بازدید منابع: ۱۶ نوامبر ۲۰۲۶. نویسنده: تیم محتوای دارووی.</p>
+    <aside class="disclaimer" role="note">
+      <strong>سلب مسئولیت:</strong> این مطالب آموزشی‌اند، توسط پزشک بازبینی بالینی نشده‌اند و جایگزین مشورت با پزشک یا داروساز نیستند. در این صفحات مقدار مصرف یا توصیهٔ درمانی داده نمی‌شود.
+    </aside>
+    <p>روی بسیاری از جعبه‌های دارویی که برای عرضه در ترکیه تولید یا وارد می‌شوند، علاوه بر نام دارو و برگهٔ راهنمای بیمار، یک کد دوبعدی از نوع Data Matrix دیده می‌شود که در مقررات ترکیه «کاردکد» (karekod) نامیده می‌شود. این کد برای <strong>تک‌واحدی کردن</strong> هر جعبه است تا بتوان مسیر دارو را در زنجیرهٔ تأمین دنبال کرد.</p>
+
+    <h2>سامانهٔ İTS چیست؟</h2>
+    <p>طبق توضیح درگاه رسمی <a href="https://its.gov.tr/">İlaç Takip Sistemi (İTS)</a>، این سامانه از تولید یا واردات تا رسیدن دارو به مصرف‌کننده را پیگیری می‌کند و هدف اعلام‌شده‌اش کاهش تقلب و قاچاق دارو و تأمین داروی اصل است. نهاد ناظر مرتبط، مؤسسهٔ دارویی و تجهیزات پزشکی ترکیه (TİTCK) است.</p>
+    <p>داشتن یک کد که «شکلش شبیه کاردکد است» به‌تنهایی به معنای تأیید رسمی آن جعبه در سامانه نیست. استعلام باید از مسیر رسمی انجام شود.</p>
+
+    <h2>داخل کاردکد چه اطلاعاتی هست؟</h2>
+    <p>راهنمای رسمی «Beşeri Tıbbi Ürünler Barkod ve Karekod Uygulama Kılavuzu» در <a href="https://its.gov.tr/Content/pdf/Beseri_Tibbi_Urunler_Barkod_ve_Karekod_Uygulama_Kilavuzu.pdf">its.gov.tr</a> ساختار کد را بر اساس استاندارد GS1 چنین توضیح می‌دهد. شناسه‌های کاربرد (Application Identifier) در متن خوانا معمولاً داخل پرانتز نوشته می‌شوند، اما خود پرانتزها داخل دادهٔ کاردکد نیستند:</p>
+    <div class="table-wrap">
+      <table>
+        <caption>شناسه‌های اصلی داخل کاردکد داروی ترکیه، طبق راهنمای رسمی بارکد و کاردکد</caption>
+        <thead>
+          <tr><th>شناسه (AI)</th><th>معنا</th><th>نکتهٔ راهنما</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="code">01</td><td>شمارهٔ تجاری جهانی (GTIN)</td><td>۱۴ رقم. اگر روی جعبه بارکد خطی EAN-13 باشد، برای ساخت GTIN یک صفر به ابتدای همان ۱۳ رقم افزوده می‌شود.</td></tr>
+          <tr><td class="code">21</td><td>شمارهٔ سریال همان جعبه</td><td>تا ۲۰ نویسه؛ برای هر واحد از یک محصول نباید تکرار شود.</td></tr>
+          <tr><td class="code">17</td><td>تاریخ انقضا</td><td>شش رقم به‌صورت سال-ماه-روز (YYMMDD). مثال راهنما: <span class="code">230430</span> یعنی ۳۰ آوریل ۲۰۲۳.</td></tr>
+          <tr><td class="code">10</td><td>شمارهٔ پارت / بچ</td><td>تا ۲۰ نویسه. در همین راهنما تأکید شده اصطلاح قدیمی «سری» برای این فیلد، همان شمارهٔ پارت است؛ آن را با شمارهٔ سریال (AI 21) اشتباه نگیرید.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>ترتیب رایج در راهنما این است که پس از GTIN، شمارهٔ سریال (طول متغیر) می‌آید، سپس یک جداکنندهٔ گروه، بعد تاریخ انقضا و پارت. خوانندهٔ عمومی لازم نیست این جزئیات فنی را حفظ کند؛ اما خوب است بداند عدد کنار <span class="code">(01)</span> با عدد کنار <span class="code">(21)</span> نقش متفاوتی دارند.</p>
+
+    <h3>تاریخ انقضا را چطور بخوانیم؟</h3>
+    <p>راهنمای رسمی می‌گوید تاریخ انقضای روی بسته‌بندی درونی، بسته‌بندی بیرونی و محتوای کاردکد باید با هم سازگار باشند. اگر روی جعبه تاریخ به‌صورت ماه/سال چاپ شود، قواعد خاصی برای رقم «روز» داخل کاردکد هست (از جمله استفاده از آخرین روز ماه یا <span class="code">00</span> در بعضی حالت‌ها). اگر تاریخ روی جعبه روز/ماه/سال باشد، همان روز باید در کاردکد هم بیاید. برای تفسیر موردی، جعبه و برگهٔ راهنما را با داروساز چک کنید؛ این صفحه جای محاسبهٔ تاریخ برای تصمیم مصرف نیست.</p>
+
+    <h3>نوشتار خوانا کنار کد</h3>
+    <p>همان راهنما می‌خواهد اطلاعات خوانا کنار یا نزدیک کاردکد باشند و شناسه‌ها در متن خوانا داخل پرانتز بیایند. دست‌کم GTIN و شمارهٔ سریال باید در کنار کاردکد، و هماهنگ با آن، خوانا باشند. اگر تاریخ انقضا در بخش خوانا بیاید، قالب‌هایی مثل SKT با ماه و سال در راهنما ذکر شده است.</p>
+
+    <h2>استعلام رسمی</h2>
+    <p>صفحهٔ رسمی «İlaç Sorgulama» در نشانی <a href="https://its.gov.tr/its/ilac_sorgula">its.gov.tr/its/ilac_sorgula</a> از کاربر می‌خواهد کدی که کنار بارکد با <span class="code">(01)</span> شروع می‌شود را <strong>بدون خود (01)</strong> در فیلد بارکد، و کدی که با <span class="code">(21)</span> شروع می‌شود را <strong>بدون خود (21)</strong> در فیلد شمارهٔ سریال وارد کند.</p>
+    <p>درگاه İTS همچنین به کار رسمی «İTS Mobil» برای اندروید و iOS پیوند می‌دهد. برای استعلام، از همین مسیرهای معرفی‌شده در its.gov.tr استفاده کنید، نه از برنامه‌های متفرقه‌ای که معلوم نیست به سامانهٔ رسمی وصل باشند.</p>
+
+    <h2>چه چیزهایی ممکن است در سامانه نباشند؟</h2>
+    <p>راهنمای بارکد و کاردکد صریحاً می‌گوید محصولاتی که صرفاً برای صادرات تولید شده‌اند و قرار نیست وارد زنجیرهٔ تأمین و مصرف ترکیه شوند، از شمول این الزام بیرون‌اند. بنابراین نبود کاردکد İTS روی یک جعبهٔ صادراتی، به‌تنهایی «جعلی بودن» را ثابت نمی‌کند؛ همان‌طور که وجود یک کد چاپی هم به‌تنهایی اصالت را تضمین نمی‌کند.</p>
+    <p>اگر نتیجهٔ استعلام با جعبه هم‌خوان نیست، یا جعبه آسیب دیده، دست‌کاری شده یا برگهٔ راهنما ندارد، تصمیم‌گیری را به داروساز یا مسیر رسمی تأمین بسپارید.</p>
+
+    <h2>منابع</h2>
+    <ol class="sources">
+      <li>İlaç Takip Sistemi. صفحهٔ اصلی و معرفی سامانه. <a href="https://its.gov.tr/">https://its.gov.tr/</a> (بازدید: ۱۶ نوامبر ۲۰۲۶).</li>
+      <li>İlaç Takip Sistemi. İlaç Sorgulama. <a href="https://its.gov.tr/its/ilac_sorgula">https://its.gov.tr/its/ilac_sorgula</a> (بازدید: ۱۶ نوامبر ۲۰۲۶).</li>
+      <li>T.C. Sağlık Bakanlığı, TİTCK (منتشرشده در درگاه İTS). Beşeri Tıbbi Ürünler Barkod ve Karekod Uygulama Kılavuzu. PDF: <a href="https://its.gov.tr/Content/pdf/Beseri_Tibbi_Urunler_Barkod_ve_Karekod_Uygulama_Kilavuzu.pdf">its.gov.tr/Content/pdf/…Kılavuzu.pdf</a> (بازدید: ۱۶ نوامبر ۲۰۲۶). مبنای مقررات: «Beşeri Tıbbi Ürünlerin Ambalaj Bilgileri, Kullanma Talimatı ve Takibi Yönetmeliği»، روزنامهٔ رسمی شمارهٔ ۳۰۰۴۸، ۲۵ آوریل ۲۰۱۷.</li>
+    </ol>
+
+  </main>
+  <footer class="site">
+    <div class="wrap">
+      <h2>حساب‌های آموزشی رسمی دارووی</h2>
+      <ul>
+        <li><a href="https://darooway.com">وب‌سایت دارووی</a></li>
+        <li><a href="https://sites.google.com/view/darooway">سایت گوگل</a></li>
+        <li><a href="https://darooway.wordpress.com/">وردپرس</a></li>
+        <li><a href="https://darooway.blogspot.com/">بلاگر</a></li>
+        <li><a href="https://darooway.blogsky.com/">بلاگ‌اسکای</a></li>
+        <li><a href="https://medium.com/@darooway">مدیوم</a></li>
+        <li><a href="https://www.tumblr.com/darooway">تامبلر</a></li>
+        <li><a href="https://darooway.substack.com/">ساب‌استک</a></li>
+        <li><a href="https://darooway.blogfa.com/">بلاگفا</a></li>
+        <li><a href="https://darooway.niloblog.com/">نیلوبلاگ</a></li>
+        <li><a href="https://www.linkedin.com/company/darooway/">لینکدین</a></li>
+      </ul>
+      <p class="tiny">محتوای این سایت توسط تیم محتوای دارووی نوشته شده و از نظر پزشکی بازبینی بالینی نشده است. جایگزین مشورت با پزشک یا داروساز نیست. مجوز مطالب: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. به‌روزرسانی: ۱۶ نوامبر ۲۰۲۶ (۲۵ آبان ۱۴۰۵)، اروپا/استانبول.</p>
+    </div>
+  </footer>
+</body>
+</html>

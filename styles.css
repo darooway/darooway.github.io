@@ -1,0 +1,135 @@
+/* DarooWay educational GitHub Pages — 2026 */
+:root {
+  --ink: #1a2330;
+  --muted: #4a5563;
+  --bg: #f7f5f1;
+  --card: #ffffff;
+  --accent: #0f5c57;
+  --accent-2: #164e63;
+  --line: #d9d3c7;
+  --warn-bg: #fff7ed;
+  --warn-border: #d97706;
+  --link: #0f5c57;
+  --link-hover: #0a3d3a;
+  --max: 46rem;
+  --sans: "Tahoma", "Noto Naskh Arabic", "Noto Sans Arabic", "Segoe UI", "Arial", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 18px; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: var(--sans);
+  line-height: 1.85;
+}
+.skip {
+  position: absolute;
+  right: -999px;
+  top: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  z-index: 10;
+}
+.skip:focus { right: 0.5rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.1rem; }
+header.site {
+  background: var(--accent-2);
+  color: #fff;
+  padding: 0.9rem 0 1rem;
+  border-bottom: 4px solid var(--accent);
+}
+header.site a { color: #fff; }
+.brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.brand span { font-weight: 400; opacity: 0.9; }
+nav.primary { margin-top: 0.55rem; }
+nav.primary ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.92rem;
+}
+nav.primary a { text-decoration: none; border-bottom: 1px solid transparent; }
+nav.primary a:hover, nav.primary a[aria-current="page"] { border-bottom-color: #fff; }
+main { padding: 1.6rem 0 2.4rem; }
+h1 { font-size: 1.55rem; line-height: 1.5; margin: 0 0 0.8rem; color: var(--accent-2); }
+h2 { font-size: 1.2rem; margin: 1.7rem 0 0.6rem; color: var(--accent); }
+h3 { font-size: 1.05rem; margin: 1.2rem 0 0.4rem; }
+p { margin: 0 0 0.9rem; }
+a { color: var(--link); }
+a:hover { color: var(--link-hover); }
+.lede { font-size: 1.05rem; color: var(--muted); }
+.disclaimer {
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin: 1rem 0 1.4rem;
+  font-size: 0.95rem;
+}
+.cards {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.2rem 0 1.6rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+}
+.card h2 { margin-top: 0; }
+.sources, .official-links { font-size: 0.95rem; }
+.sources ol, .sources ul { padding-right: 1.2rem; }
+figure.table-wrap, .table-wrap { overflow-x: auto; margin: 1rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  font-size: 0.92rem;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.6rem;
+  text-align: right;
+  vertical-align: top;
+}
+th { background: #e8eef0; color: var(--accent-2); }
+.drug {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  margin: 0 0 1rem;
+}
+.drug h2 { margin-top: 0; }
+.meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+footer.site {
+  border-top: 1px solid var(--line);
+  padding: 1.3rem 0 2rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  background: #efebe4;
+}
+footer.site h2 { font-size: 1rem; color: var(--ink); margin-top: 0; }
+footer.site ul { padding-right: 1.2rem; margin: 0.3rem 0 0.9rem; }
+.tiny { font-size: 0.82rem; }
+code, .code {
+  font-family: ui-monospace, "Cascadia Code", "DejaVu Sans Mono", monospace;
+  font-size: 0.88em;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+@media (max-width: 600px) {
+  html { font-size: 17px; }
+  h1 { font-size: 1.35rem; }
+}
